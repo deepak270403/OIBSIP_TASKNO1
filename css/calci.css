@@ -1,0 +1,220 @@
+@font-face {
+    font-family: Source Code Pro;
+    src: url('./source-code-pro.regular.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    /* background-image: linear-gradient(to bottom right, #D4145A,#FBB03B); */
+    background-image: url("images/colorful_gradient_4k_2.jpg");
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    place-items: center;
+}
+
+.content{
+    /* position: absolute; */
+    /* left: 88px; */
+    width: 100%;
+    padding-left: 100px;
+    justify-content: center;
+    /* float: left; */
+}
+
+.content h1{
+    /* font-family: 'Open Sans', sans-serif; */
+    /* font-family: 'Vollkorn', serif; */
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Freehand', cursive;
+    /* font-family: 'Shalimar', cursive; */
+    color: #fff;
+    font-size: 70px;
+    text-align: center;
+}
+
+.content h2{
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    /* font-family: 'Fuzzy Bubbles', cursive; */
+    /* font-family: 'Freehand', cursive; */
+    /* font-family: 'Shalimar', cursive; */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Vollkorn', serif;
+    color: #000;
+    font-size: 30px;
+    text-align: center;
+}
+
+.calculator{
+    float: left;
+    /* position: relative; */
+    /* left: 350px; */
+
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #000;
+    justify-content: center;
+}
+
+.theme-toggler{
+    position: absolute;
+    /* top: 120px; */
+    /* right: 250px; */
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler.active{
+    color: #333;
+}
+
+.theme-toggler.active::before{
+    background-color: #fff;
+}
+
+.theme-toggler::before{
+    background-color: #fff;
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+
+.display{
+    font-family: Source Code Pro;
+    margin: 0 10px;
+    height: 70px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+
+.display::-webkit-scrollbar{
+    display: block;
+    height: 3px;
+}
+
+button{
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+button#equal{
+    height: 60px;
+}
+
+/* light theme */
+
+.calculator{
+    background-color: #fff;
+}
+.calculator #upper #lower{
+    /* color: #0a1e23; */
+    color: black;
+}
+.calculator button#clear{
+    background-color: #4BAEA0;
+    color: #000;
+}
+.calculator button.btn-num{
+    background-color: #6E85B7;
+    color: #000;
+}
+
+.calculator button.btn-op{
+    background-color: #F65A83;
+    color: #000;
+}
+
+.calculator button#equal{
+    background-color:#FECD70 ;
+    color: #000;
+}
+
+/* dark theme */
+.calculator.dark{
+    background-color: #071115;
+}
+
+.calculator.dark .display{
+    /* background-color: #2d191e; */
+    color: #f8fafd;
+}
+
+.calculator.dark button#clear{
+    background-color: #2d191e;
+    color: #bd3740;
+}
+.calculator.dark button.btn-num{
+    background-color: #1b2f38;
+    color: #f8fafb;
+}
+
+.calculator.dark button.btn-op{
+    background-color: #2e1f39;
+    color: #aa00a4;
+}
+.calculator.dark button#equal{
+    background-color: #223323;
+    color: #ffffff;
+}
+
+@media screen and (max-width : 1000px){
+    .container{
+        display: grid;
+        grid-template-columns: auto;
+        place-items: center;
+    }
+    .content{
+        width: auto;
+        padding-left:0;
+        line-height: 1.5;
+        text-align: center;
+    }
+}
+
+
+
+
